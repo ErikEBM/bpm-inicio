@@ -15,7 +15,7 @@
         display: block;
       }
       .capa-inicio {
-        border: 2px solid mediumseagreen;
+        
         border-radius: 50%;
         height: 35px;
         width: 35px;
@@ -24,11 +24,26 @@
       .capa-inicio iron-icon {
         margin-left: 6px;
         margin-top: 3px;
+      }
+      .capa-tipo-inicio .capa-inicio {
+       border: 2px solid mediumseagreen;
+      }
+      .capa-tipo-inicio iron-icon {
         color: mediumseagreen;
+
+      }
+       .capa-tipo-fin .capa-inicio {
+       border: 2px solid #B9032F;
+      }
+      .capa-tipo-fin iron-icon {
+        color: #B9032F;
+
       }
     </style>
-    <div class="capa-inicio">
-      <iron-icon icon="icons:[[icono]]"></iron-icon>
+    <div class$="capa-tipo-{{tipo}}">
+      <div class="capa-inicio">
+        <iron-icon icon="icons:[[icono]]"></iron-icon>
+      </div>
     </div>
   </template>
 
@@ -41,6 +56,10 @@
         icono: {
           type: String,
           value: 'mail',
+        },
+        tipo: {
+          type: String,
+          value: 'inicio',
         },
       },
 
